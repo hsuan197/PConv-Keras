@@ -1,4 +1,3 @@
-
 from keras.utils import conv_utils
 from keras import backend as K
 from keras.engine import InputSpec
@@ -6,8 +5,8 @@ from keras.layers import Conv2D
 
 
 class PConv2D(Conv2D):
-    def __init__(self, *args, n_channels=3, mono=False, **kwargs):
-        super().__init__(*args, **kwargs)
+    def __init__(self, *args, **kwargs):
+        super(Conv2D, self).__init__(*args, **kwargs)
         self.input_spec = [InputSpec(ndim=4), InputSpec(ndim=4)]
 
     def build(self, input_shape):        
